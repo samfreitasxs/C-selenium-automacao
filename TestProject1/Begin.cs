@@ -9,6 +9,8 @@ namespace TestProject1
     public class Begin
     {
         public IWebDriver driver;
+        public bool driverQuit = true;
+
 
         [SetUp]
         public void InicioTeste()
@@ -16,6 +18,7 @@ namespace TestProject1
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://www.buscacep.correios.com.br");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driverQuit = false;
         }
 
       
@@ -23,7 +26,7 @@ namespace TestProject1
         [TearDown]
         public void FimDoTeste()
         { 
-            
+           if (driverQuit) driver.Quit();
         }
     }
 }
