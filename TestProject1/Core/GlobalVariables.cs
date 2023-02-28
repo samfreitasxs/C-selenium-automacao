@@ -10,5 +10,7 @@ namespace TestProject1.Core
         
         // Define 'fechar navegador ao final do teste' como padrao
         public bool driverQuit = true;
+
+        public bool headlessTest = true;
     }
 }

@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
+using TestProject1.Page;
 
 namespace TestProject1.Test
 {
-    internal class ValidaCepTest
+    public class ValidaCepTest : ValidaCepPage
     {
+        [Test]
+        public void ValidaCep() 
+        {
+
+            PreencheCep();
+            ClicaBtnBusca();
+            ValidaResultado();
+        }
     }
 }
