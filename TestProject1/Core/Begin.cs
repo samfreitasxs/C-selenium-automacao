@@ -1,16 +1,12 @@
 
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 
-namespace TestProject1
+namespace TestProject1.Core
 {
-    public class Begin
+    public class Begin : DSL
     {
-        public IWebDriver driver;
-        public bool driverQuit = true;
-
 
         [SetUp]
         public void InicioTeste()
@@ -21,12 +17,12 @@ namespace TestProject1
             driverQuit = false;
         }
 
-      
+
 
         [TearDown]
         public void FimDoTeste()
-        { 
-           if (driverQuit) driver.Quit();
+        {
+            if (driverQuit) driver.Quit();
         }
     }
 }
