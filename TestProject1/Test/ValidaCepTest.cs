@@ -15,7 +15,7 @@ namespace TestProject1.Test
         }
 
         [Test]
-        public new void ValidaResultadoTotal()
+        public void ValidarResultadoTotal()
         {
 
             PreencheCep();

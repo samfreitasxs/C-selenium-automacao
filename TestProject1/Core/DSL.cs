@@ -10,20 +10,20 @@ namespace TestProject1.Core
     {
         #region Funcoes de manipulacao
 
-        public static void Wait(int time) => Thread.Sleep(time);
+        public static void Espere(int time) => Thread.Sleep(time);
 
-        public void ClearData(string element) => driver.FindElement(By.XPath(element)).Clear();
+        public void LimparCampo(string element) => driver.FindElement(By.XPath(element)).Clear();
 
-        public void ClickOut() => driver.FindElement(By.XPath("//html")).Click();
-        #endregion
+        public void ClicaFora() => driver.FindElement(By.XPath("//html")).Click();
+        
 
-        public void WaitElement(string element, int seconds = 90)
+        public void EsperaElemento(string element, int seconds = 90)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             wait.Until((d) => { return d.FindElement(By.XPath(element)); });
         }
-
-        public void WaitElementGone(string element)
+        
+        public void EsperaElementoSumir(string element)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
             wait.Until(d => d.FindElements(By.XPath(element)).Count == 0);
@@ -35,6 +35,7 @@ namespace TestProject1.Core
             { driver.FindElement(By.XPath(xPath)); return true; } 
             catch (NoSuchElementException) { return false; }
         }
+        #endregion
 
         #region Funcoes de Interacao
         public void EscreveTexto(string xpath, string value)
