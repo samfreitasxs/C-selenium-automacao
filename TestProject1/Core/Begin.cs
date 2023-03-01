@@ -29,7 +29,7 @@ namespace TestProject1.Core
         public void InicioTeste()
         {
             AbreNavegador();
-            driver.Navigate().GoToUrl("http://www.buscacep.correios.com.br");
+            driver.Navigate().GoToUrl("https://buscacepinter.correios.com.br/app/endereco/index.php");
         }
         #endregion
 

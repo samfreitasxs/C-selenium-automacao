@@ -13,5 +13,20 @@ namespace TestProject1.Test
             ClicaBtnBusca();
             ValidaResultado();
         }
+
+        [Test]
+        public new void ValidaResultadoTotal()
+        {
+
+            PreencheCep();
+            ClicaBtnBusca();
+            ValidaResultadoTotal();
+        }
+
+        [Test]
+        public void ValidaMultiplosCenarios()
+        {
+            ValidaMultiplosCeps();
+        }
     }
 }
